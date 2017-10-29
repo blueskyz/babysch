@@ -1,0 +1,87 @@
+/**banner样式**/
+#banner{
+width:100%;
+height:500px;
+background:url("../jiameng/images/banner.jpg") top center no-repeat;
+overflow: hidden;
+position: relative;
+}
+
+#banner02{
+width:100%;
+height:601px;
+background:url("../jiameng/images/banner02.png") top center no-repeat;
+overflow: hidden;
+position: relative;
+}
+#banner03{
+width:100%;
+height:643px;
+background:url("../jiameng/images/banner03.png") top center no-repeat;
+overflow: hidden;
+position: relative;
+}
+#banner04{
+width:100%;
+height:1328px;
+background:url("../jiameng/images/banner04.png") top center no-repeat;
+overflow: hidden;
+position: relative;
+}
+#banner05{
+width:100%;
+height:738px;
+background:url("../jiameng/images/lcbg.jpg") top center no-repeat;
+overflow: hidden;
+position: relative;
+}
+#banner08{
+width:100%;
+height:702px;
+background:url("../jiameng/images/hzbg.png") top center no-repeat;
+overflow: hidden;
+position: relative;
+}
+
+#banner, #banner02, #banner03, #banner04, #banner05, #banner06, #banner07, #banner08,.footer{
+    min-width: 1005px;
+    width: 100%;
+    z-index:-1;
+   
+}
+
+
+#cs_box {
+	width: 120px;
+	height: 220px;
+	color: #FFF;
+	position: fixed;
+	left: 10px;
+	top: 50%;
+	border-radius: 10px;
+	z-index: 1000
+}
+
+#cs_box span {
+	height: 20px;
+	line-height: 20px;
+	display: block;
+}
+
+
+.cs_img {
+	width: 164px;
+	height: 186px;
+	margin: 10px;
+	background-image: url(../jiameng/images/kf_03.png)
+}
+
+.cs_info {
+	font-size: 12px;
+	margin: 0px 10px;
+	overflow: hidden;
+	text-align: center;
+}
+
+
+

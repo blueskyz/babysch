@@ -1,0 +1,22 @@
+{
+  "name": "babysch",
+  "authors": [
+    "zsz@hopez.org"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "www.u3v3.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}
