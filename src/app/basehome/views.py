@@ -2,19 +2,20 @@
 # coding: utf-8
 
 
+from flask import render_template
 from . import home
 
 
 @home.route('/')
 def index():
-    return '<h1>Hello World zsz {}!</h1>'.format(__name__)
+    return render_template('index.html')
 
 
 @home.route('/curriculum')
 def curriculum():
-    return template
+    return render_template('index.html')
 
 
 @home.route('/brand')
-def curriculum():
-    return template
+def brand():
+    return render_template('index.html')
