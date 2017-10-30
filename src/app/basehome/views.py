@@ -2,12 +2,19 @@
 # coding: utf-8
 
 
-from flask import Blueprint
-
-
-home = Blueprint('home', __name__, template_folder='templates')
+from . import home
 
 
 @home.route('/')
 def index():
     return '<h1>Hello World zsz {}!</h1>'.format(__name__)
+
+
+@home.route('/curriculum')
+def curriculum():
+    return template
+
+
+@home.route('/brand')
+def curriculum():
+    return template
