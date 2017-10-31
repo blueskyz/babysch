@@ -8,4 +8,4 @@ from . import auth
 
 @auth.route('/login')
 def login():
-    return render_template('auth/login.html')
+    return render_template('login.html')

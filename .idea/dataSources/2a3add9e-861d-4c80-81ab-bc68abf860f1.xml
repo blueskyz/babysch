@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="babyschool@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="babyschool">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="chouti"/>
+    <schema id="4" parent="1" name="db_demo1"/>
+    <schema id="5" parent="1" name="db_demo2"/>
+    <schema id="6" parent="1" name="db_demo3"/>
+    <schema id="7" parent="1" name="db_demo4"/>
+    <schema id="8" parent="1" name="information_schema"/>
+    <schema id="9" parent="1" name="mychouti"/>
+    <schema id="10" parent="1" name="mysite1"/>
+    <schema id="11" parent="1" name="mysql"/>
+    <schema id="12" parent="1" name="performance_schema"/>
+    <schema id="13" parent="1" name="sys"/>
+    <schema id="14" parent="1" name="user_manager"/>
+    <schema id="15" parent="1" name="xiaohong"/>
+    <schema id="16" parent="1" name="zlktqa"/>
+    <schema id="17" parent="1" name="myPerfectCRM"/>
+  </database-model>
+</dataSource>
