@@ -1,6 +1,7 @@
-<html>
+<html lang="zh-cn">
      <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>早教|托教|上海XXXX托教中心_官网</title>
         <meta name="keywords" content="托教, 托育,托管,婴儿托管,幼儿园加盟, 早教中心,幼儿教育,幼儿早教,国际早教中心,幼儿早教课程,早教加盟,托管中心,托管加盟, 托教中心加盟,早教中心加盟">
         <meta name="description" content="国际化知名托教+早教综合品牌，拥有美国原创Daycare课程体系,纯双语教学环境,全球11国家138家中心,智能安全的教学环境+美国进口的教学用具,与百万家庭共同见证宝宝成长。">
@@ -18,50 +19,28 @@
      </head>
      <body>
          {% block navbar %}
-         <div class="navbar navbar-inverse">
-             <div class="navbar-inner">
-                 <div class="container">
-                     <a class="brand" href="/"><span class="logo"></span></a>
-                     <div class="navbar-header">
-                         <button type="button" class="navbar-toggle"
-                                               data-toggle="collapse" data-target=".navbar-collapse">
-                             <span class="sr-only">Toggle navigation</span>
-                             <span class="icon-bar"></span>
-                             <span class="icon-bar"></span>
-                             <span class="icon-bar"></span>
-                         </button>
-                         <!--
-                         <a class="navbar-brand" href="/">Flasky</a>
-                         -->
-                     </div>
-                     <div class="navbar-collapse collapse">
+         <header>
+             <nav class="navbar navbar-default">
+                 <div class="container-fluid">
                          <ul class="nav navbar-nav">
-                             <li><a href="/">Home</a></li>
-                             <li>
-                                 <a href="/getting-started">
-                                     <span>Getting Started</span>
-                                 </a>
-                             </li>
-                             <li>
-                                 <a href="/configuring-tasks">
-                                     <span>Configuring Tasks</span>
-                                 </a>
-                             </li>
-                             <li>
-                                 <a href="/plugins">
-                                     <span>Plugins</span>
-                                 </a>
-                             </li>
-                             <li>
-                                 <a href="/getting-started">
-                                     <span>Documentation</span>
-                                 </a>
+                             <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+                             <li><a href="#">Link</a></li>
+                             <li class="dropdown">
+                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                                 <ul class="dropdown-menu">
+                                     <li><a href="#">Action</a></li>
+                                     <li><a href="#">Another action</a></li>
+                                     <li><a href="#">Something else here</a></li>
+                                     <li role="separator" class="divider"></li>
+                                     <li><a href="#">Separated link</a></li>
+                                     <li role="separator" class="divider"></li>
+                                     <li><a href="#">One more separated link</a></li>
+                                 </ul>
                              </li>
                          </ul>
-                     </div><!--.nav-collapse-->
                  </div>
-             </div>
-         </div>
+             </nav>
+         </header>
          {% endblock %}
 
          {% block content %}
