@@ -26,8 +26,6 @@ app.register_blueprint(auth)
 
 manager = Manager(app)
 
-
-
 if __name__ == '__main__':
     # for i in app.url_map.iter_rules():
     manager.run()
