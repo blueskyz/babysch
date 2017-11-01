@@ -7,6 +7,8 @@ import exts
 
 from app.auth import auth
 from app.basehome import home
+from app.schedulecourse import course
+
 from flask import Flask
 from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
@@ -23,9 +25,13 @@ app.register_blueprint(home, url_prefix='')
 app.register_blueprint(home)
 app.register_blueprint(auth, url_prefix='')
 app.register_blueprint(auth)
+app.register_blueprint(course, url_prefix='')
+app.register_blueprint(course)
 
 manager = Manager(app)
 
+
 if __name__ == '__main__':
-    # for i in app.url_map.iter_rules():
+    for i in app.url_map.iter_rules():
+        print(i)
     manager.run()
