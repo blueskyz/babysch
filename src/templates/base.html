@@ -1,5 +1,5 @@
 <html lang="zh-cn">
-     <head>
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>早教|托教|上海XXXX托教中心_官网</title>
@@ -10,51 +10,99 @@
         <link href="/static/themes/default/css/main.css" rel="stylesheet" type="text/css" media="screen" />
         <!--移动端跳转-->
         <!--
-        <link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="http://m.xxx.cn"/>
+            <link rel="alternate" type="application/vnd.wap.xhtml+xml" media="handheld" href="http://m.xxx.cn"/>
         -->
 
         {% block head %}
         <title>{% block title %}主站{% endblock %} - 上海XXXX托教中心</title>
         {% endblock %}
-     </head>
-     <body>
-         {% block navbar %}
-         <header>
-             <nav class="navbar navbar-default">
-                 <div class="container-fluid">
-                         <ul class="nav navbar-nav">
-                             <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                             <li><a href="#">Link</a></li>
-                             <li class="dropdown">
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                 <ul class="dropdown-menu">
-                                     <li><a href="#">Action</a></li>
-                                     <li><a href="#">Another action</a></li>
-                                     <li><a href="#">Something else here</a></li>
-                                     <li role="separator" class="divider"></li>
-                                     <li><a href="#">Separated link</a></li>
-                                     <li role="separator" class="divider"></li>
-                                     <li><a href="#">One more separated link</a></li>
-                                 </ul>
-                             </li>
-                         </ul>
-                 </div>
-             </nav>
-         </header>
-         {% endblock %}
+    </head>
+    <body>
+        {% block navbar %}
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">幼教培训</a>
+                </div>
 
-         {% block content %}
-         <div class="container">
-             <div class="page-header">
-                 <h1>Hello, {{ name }}!</h1>
-             </div>
-         </div>
-         {% endblock %}
-     </body>
-     <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
-     <script type="text/javascript">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">首页</a></li>
+                        <li class="active"><a href="#">品牌故事</a></li>
+                        <li class="active"><a href="#">课程体系</a></li>
+                        <li class="active"><a href="#">幼儿托教</a></li>
+                        <li class="active"><a href="#">联系我们</a></li>
+                        <!--
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">One more separated link</a></li>
+                            </ul>
+                        </li>
+                        -->
+                    </ul>
+                    <!--
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#">Link</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    -->
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div id="side-menu">
+            <ul class="menu">
+                <li class="active"><a href="#">首页</a></li>
+                <li class="active"><a href="#">品牌故事</a></li>
+                <li class="active"><a href="#">课程体系</a></li>
+                <li class="active"><a href="#">幼儿托教</a></li>
+                <li class="active"><a href="#">联系我们</a></li>
+            </ul>
+        </div>
+        {% endblock %}
+
+        {% block content %}
+        <div class="container">
+            <div class="page-header">
+                <h1>Hello, {{ name }}!</h1>
+            </div>
+        </div>
+        {% endblock %}
+    </body>
+    <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript">
 $(function(){
+    $(".navbar").click(function(e){
+        $("#side-menu").show();
+        e.stopPropagation();
+    });
+    $("body").click(function(){
+        $("#side-menu").hide();
+    });
     // $("div").animate({left:'250px'});
 });
-     </script>
+    </script>
 </html>
