@@ -18,6 +18,8 @@ app = Flask(__name__)
 app.config.from_object(config)
 db.init_app(app)
 
+
+
 app.register_blueprint(home, url_prefix='')
 app.register_blueprint(home)
 app.register_blueprint(auth, url_prefix='')
