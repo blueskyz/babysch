@@ -11,15 +11,19 @@ from app.schedulecourse import course
 
 from flask import Flask
 from flask_script import Manager
+from flask_migrate import Migrate, MigrateCommand
 from flask_sqlalchemy import SQLAlchemy
 
-from models import UserModel
 from exts import db
 
 app = Flask(__name__)
 app.config.from_object(config)
-db.init_app(app)
+migrate = Migrate(app, db)
 
+from models import UserModel
+
+manager = Manager(app)
+manager.add_command('db', MigrateCommand)
 
 app.register_blueprint(home, url_prefix='')
 app.register_blueprint(home)
@@ -29,7 +33,6 @@ app.register_blueprint(course, url_prefix='')
 app.register_blueprint(course)
 
 manager = Manager(app)
-
 
 if __name__ == '__main__':
     for i in app.url_map.iter_rules():
