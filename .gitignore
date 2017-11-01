@@ -2,3 +2,4 @@ bower_components
 *.swp
 *.idea
 __pycache__
+workspace.xml
