@@ -1,6 +1,7 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 
 from exts import db
+import datetime
 
 
 class UserModel(db.Model):
@@ -28,3 +29,23 @@ class UserModel(db.Model):
 
     def check_password(self,rawpwd):
         return check_password_hash(self._password,rawpwd)
+
+
+class ScheduleRecordModel(db.Model):
+    __tablename__ = 'scheduleRecord'
+    id = db.Column(db.Integer,primary_key=True,autoincrement=True)
+    phone = db.Column(db.String(11),nullable=False)
+    udate = db.Column(db.DateTime,default=datetime.datetime.now)
+    cdate = db.Column(db.DateTime, default=datetime.datetime.now)
+    note = db.Column(db.Text, nullable=True)
+    date = db.Column(db.String(32))
+    # course_id = db.Column(db.String(64),db.ForeignKey('course.id'))
+    # course = db.relationship('CourseModel')
+
+class CourseModel(db.Model):
+    __tablename__ = 'course'
+    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
+    name = db.Column(db.String(32),nullable=False)
+    discription = db.Column(db.Text,nullable=False)
+
+
