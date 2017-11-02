@@ -14,3 +14,7 @@
 1. 创建 src schema doc 目，录mkdir -pv src schema doc
 1. 进入 src 目录，cd src
 1. 创建 static 目录，保存前端 css, js, 图片文件，mkdir -pv static
+1. 执行数据库创建命令:
+    * python manage.py db init
+    * python manage.py db migrate
+    * python manage.py db upgrade
