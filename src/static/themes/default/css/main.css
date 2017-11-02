@@ -1,3 +1,23 @@
+.navbar {
+    background-color: #e48632;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar button {
+    border: none;
+}
+
+.navbar-default .navbar-toggle span.icon-bar {
+    background-color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: black;
+}
+
 #side-menu {
     height: 2048px;
     width: 128px;
@@ -15,4 +35,8 @@
 .menu li a {
     color: white;
     font-size: 1em;
+}
+
+.side-menu-item {
+    margin-top: 32px;
 }

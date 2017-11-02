@@ -35,11 +35,11 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">首页</a></li>
-                        <li class="active"><a href="#">品牌故事</a></li>
-                        <li class="active"><a href="#">课程体系</a></li>
-                        <li class="active"><a href="#">幼儿托教</a></li>
-                        <li class="active"><a href="#">联系我们</a></li>
+                        <li class="inactive"><a href="#">首页</a></li>
+                        <li class="inactive"><a href="#">品牌故事</a></li>
+                        <li class="inactive"><a href="#">课程体系</a></li>
+                        <li class="inactive"><a href="#">幼儿托教</a></li>
+                        <li class="inactive"><a href="#">联系我们</a></li>
                         <!--
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -75,19 +75,23 @@
         </nav>
         <div id="side-menu">
             <ul class="menu">
-                <li class="active"><a href="#">首页</a></li>
-                <li class="active"><a href="#">品牌故事</a></li>
-                <li class="active"><a href="#">课程体系</a></li>
-                <li class="active"><a href="#">幼儿托教</a></li>
-                <li class="active"><a href="#">联系我们</a></li>
+                <li class="side-menu-item"><a href="#">首页</a></li>
+                <li class="side-menu-item"><a href="#">品牌故事</a></li>
+                <li class="side-menu-item"><a href="#">课程体系</a></li>
+                <li class="side-menu-item"><a href="#">幼儿托教</a></li>
+                <li class="side-menu-item"><a href="#">联系我们</a></li>
             </ul>
         </div>
         {% endblock %}
 
         {% block content %}
         <div class="container">
-            <div class="page-header">
-                <h1>Hello, {{ name }}!</h1>
+            <div class="intro-header">
+                <img style="width: 100%" src="/static/themes/default/images/0cba277bfe5b4d4b85a14b2080e8a42d.jpg"></img>
+            </div>
+            <div class="page-content">
+                <h1>托教介绍</h1>
+                <p>托教班将国内外先进的教育理念和授课方法相结合，着重培养幼儿在集体环境中良好的生活习惯和行为方式，课程设计尊重幼儿个性发展，锻炼幼儿成长为独立自信的人。</p>
             </div>
         </div>
         {% endblock %}
@@ -95,7 +99,7 @@
     <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript">
 $(function(){
-    $(".navbar").click(function(e){
+    $(".navbar button").click(function(e){
         $("#side-menu").show();
         e.stopPropagation();
     });
