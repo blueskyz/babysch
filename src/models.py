@@ -6,7 +6,7 @@ import datetime
 
 class UserModel(db.Model):
     __tablename__ = "users"
-    id = db.Column(db.String(100),primary_key=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(100),nullable=False)
     telephone = db.Column(db.String(11),nullable=False)
     _password = db.Column(db.String(100),nullable=False)

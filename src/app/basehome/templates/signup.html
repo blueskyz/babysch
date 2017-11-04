@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div>
-    <h1>登录</h1>
+    <h1>注册</h1>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
     {% for msg in messages%}
@@ -22,11 +22,15 @@
       <dd>{{ field(**kwargs)|safe }}</dd>
     {% endmacro %}
 
-    <form action='login' method='POST'>
+    <form action='signup' method='POST'>
+        <dl>
         {{ form.csrf_token }}
         {{ render_field(form.phone) }}
+        {{ render_field(form.username) }}
         {{ render_field(form.passwd) }}
-        <input type='submit' value='登录'/>
+        </dl>
+        <p><input type='submit' value='注册'/></p>
     </form>
 </div>
 {%endblock%}
+
