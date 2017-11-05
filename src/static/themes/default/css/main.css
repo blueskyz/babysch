@@ -1,3 +1,16 @@
+body {
+    font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #5c77ab;
+    margin-top: 2rem;
+}
+
+.page-content {
+    margin-top: 2rem;
+}
+
 .navbar {
     background-color: #e48632;
 }
