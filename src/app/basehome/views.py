@@ -19,3 +19,13 @@ def curriculum():
 @home.route('/brand/')
 def brand():
     return render_template('home/brand.html')
+
+
+@home.route('/idea/')
+def idea():
+    return render_template('home/idea.html')
+
+
+@home.route('/education/')
+def education():
+    return render_template('home/education.html')
