@@ -1,11 +1,12 @@
-<html lang="zh-cn">
+<!DOCTYPE html>
+<html lang="zh-CN">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>早教|托教|上海XXXX托教中心_官网</title>
-        <meta name="keywords" content="托教, 托育,托管,婴儿托管,幼儿园加盟, 早教中心,幼儿教育,幼儿早教,国际早教中心,幼儿早教课程,早教加盟,托管中心,托管加盟, 托教中心加盟,早教中心加盟">
+        <title>早教|托教|嘟马奇|上海嘟马奇托教中心_官网</title>
+        <meta name="keywords" content="嘟马奇, 托教, 托育,托管,婴儿托管,幼儿园加盟, 早教中心,幼儿教育,幼儿早教,国际早教中心,幼儿早教课程,早教加盟,托管中心,托管加盟, 托教中心加盟,早教中心加盟">
         <meta name="description" content="国际化知名托教+早教综合品牌，拥有美国原创Daycare课程体系,纯双语教学环境,全球11国家138家中心,智能安全的教学环境+美国进口的教学用具,与百万家庭共同见证宝宝成长。">
-        <link rel="shortcut icon" href="/static/themes/default/images/ico.png">
+        <link rel="shortcut icon" href="/static/themes/default/images/icon.png">
         <link href="/static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
         <link href="/static/themes/default/css/main.css" rel="stylesheet" type="text/css" media="screen" />
         <!--移动端跳转-->
@@ -14,7 +15,7 @@
         -->
 
         {% block head %}
-        <title>{% block title %}主站{% endblock %} - 上海XXXX托教中心</title>
+        <title>{% block title %}主站{% endblock %} - 上海嘟马奇托教中心</title>
         {% endblock %}
     </head>
     <body>
@@ -29,17 +30,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">幼教培训</a>
+                    <a class="navbar-brand" href="/">嘟马奇</a>
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="inactive"><a href="/">首页</a></li>
-                        <li class="inactive"><a href="/brand">品牌故事</a></li>
-                        <li class="inactive"><a href="/curriculum">课程体系</a></li>
-                        <li class="inactive"><a href="/nursery">幼儿托教</a></li>
-                        <li class="inactive"><a href="/contact">联系我们</a></li>
+                        <li class="inactive"><a href="/home/brand">品牌故事</a></li>
+                        <li class="inactive"><a href="/home/idea">教育理念</a></li>
+                        <li class="inactive"><a href="/home/education">教育特色</a></li>
+                        <li class="inactive"><a href="/home/curriculum">课程体系</a></li>
+                        <li class="inactive"><a href="/home/contact">联系我们</a></li>
                         {% if current_user.is_authenticated %}
                         <li class="inactive"><a href="/schedule">预约信息管理</a></li>
                         <li class="inactive"><a href="/auth/logout">退出</a></li>
@@ -53,10 +55,10 @@
         <div id="side-menu">
             <ul class="menu">
                 <li class="side-menu-item"><a href="/">首页</a></li>
-                <li class="side-menu-item"><a href="/brand">品牌故事</a></li>
-                <li class="side-menu-item"><a href="/curriculum">课程体系</a></li>
-                <li class="side-menu-item"><a href="/nursery">幼儿托教</a></li>
-                <li class="side-menu-item"><a href="/contact">联系我们</a></li>
+                <li class="side-menu-item"><a href="/home/brand">品牌故事</a></li>
+                <li class="side-menu-item"><a href="/home/curriculum">课程体系</a></li>
+                <li class="side-menu-item"><a href="/home/nursery">幼儿托教</a></li>
+                <li class="side-menu-item"><a href="/home/contact">联系我们</a></li>
                 {% if current_user.is_authenticated %}
                 <li class="side-menu-item"><a href="/schedule">预约信息管理</a></li>
                 <li class="side-menu-item"><a href="/auth/logout">退出</a></li>
@@ -73,10 +75,16 @@
                 <img style="width: 100%" src="/static/themes/default/images/0cba277bfe5b4d4b85a14b2080e8a42d.jpg"></img>
             </div>
             <div class="page-content">
+            {% block main_content %}
                 <h1>托教介绍</h1>
                 <p>托教班将国内外先进的教育理念和授课方法相结合，着重培养幼儿在集体环境中良好的生活习惯和行为方式，课程设计尊重幼儿个性发展，锻炼幼儿成长为独立自信的人。</p>
+            {% endblock %}
             </div>
             {% endblock %}
+        </div>
+
+        <div class="footer">
+            <span>版权所有 © 2017，嘟马奇教育公司 | <a src="#">备案</a></span>
         </div>
     </body>
     <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
