@@ -8,14 +8,14 @@ from . import home
 
 @home.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('home/index.html')
 
 
 @home.route('/curriculum/')
 def curriculum():
-    return render_template('index.html')
+    return render_template('home/curriculum.html')
 
 
 @home.route('/brand/')
 def brand():
-    return render_template('index.html')
+    return render_template('home/brand.html')

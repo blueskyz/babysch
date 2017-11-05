@@ -26,10 +26,10 @@ def login():
         else:
             flash('用户名密码不匹配')
 
-    return render_template('login.html', form=form)
+    return render_template('auth/login.html', form=form)
 
 
-@auth.route('/signup', methods=['GET', 'POST'])
+# @auth.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = SignupForm()
 
@@ -42,7 +42,7 @@ def signup():
         user_info = UserModel.query.filter_by(telephone=phone).first()
         if user_info:
             flash('该手机号已被注册')
-            return render_template('signup.html', form=form)
+            return render_template('auth/signup.html', form=form)
 
         user = UserModel(username=username, telephone=phone, password=passwd)
         db.session.add(user)
@@ -51,7 +51,7 @@ def signup():
         # 注册成功, 登录
         return redirect('/login')
 
-    return render_template('signup.html', form=form)
+    return render_template('auth/signup.html', form=form)
 
 
 @auth.route('/logined', methods=['GET'])
