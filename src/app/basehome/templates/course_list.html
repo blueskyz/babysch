@@ -7,6 +7,8 @@
                             <th>ID</th>
                             <th>名称</th>
                             <th>描述</th>
+                            <th>图片链接</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -20,6 +22,9 @@
                                 </td>
                                 <td>
                                     {{ course.discription }}
+                                </td>
+                                <td>
+                                    {{ course.img_url }}
                                 </td>
                             </tr>
                         {% endfor %}

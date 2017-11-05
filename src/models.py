@@ -44,8 +44,13 @@ class ScheduleRecordModel(db.Model):
 
 class CourseModel(db.Model):
     __tablename__ = 'course'
-    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
+    id = db.Column(db.Integer,primary_key=True,autoincrement=True,nullable=False)
     name = db.Column(db.String(32),nullable=False)
     discription = db.Column(db.Text,nullable=False)
+    img_url = db.Column(db.String(128),nullable=True)
+    cdate = db.Column(db.DateTime, default=datetime.datetime.now)
+    udate = db.Column(db.DateTime, default=datetime.datetime.now)
+
+
 
 
