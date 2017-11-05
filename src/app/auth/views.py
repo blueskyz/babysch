@@ -29,7 +29,14 @@ def login():
     return render_template('auth/login.html', form=form)
 
 
-# @auth.route('/signup', methods=['GET', 'POST'])
+@auth.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect('/')
+
+
+@auth.route('/signup', methods=['GET', 'POST'])
 def signup():
     form = SignupForm()
 
@@ -49,7 +56,7 @@ def signup():
         db.session.commit()
 
         # 注册成功, 登录
-        return redirect('/login')
+        return redirect('/auth/login')
 
     return render_template('auth/signup.html', form=form)
 
