@@ -35,3 +35,19 @@ def schedule():
         else:
             error = "预约失败请重新预约"
             return render_template('schedule_course.html',error=error)
+
+'''
+课程列表
+'''
+@course.route('/schedule-list',methods=['GET'])
+def schedule_list():
+    schedule_list = ScheduleRecordModel.query.all()
+    return render_template('schedul_list.html',schedule_list = schedule_list)
+
+'''
+预约列表
+'''
+@course.route('/course-list',methods=['GET'])
+def course_list():
+    course_list = CourseModel.query.all()
+    return render_template('course_list.html',course_list = course_list)

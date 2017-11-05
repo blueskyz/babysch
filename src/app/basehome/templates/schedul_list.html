@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>电话号码</th>
+                            <th>日期</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record  in schedule_list %}
+                            <tr>
+                                <td>
+                                    {{ record.phone }}
+                                </td>
+
+                                <td>{{ record.date }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+     </table>
+{% endblock %}

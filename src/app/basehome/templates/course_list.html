@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>名称</th>
+                            <th>描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for course  in course_list %}
+                            <tr>
+                                <td>
+                                    {{ course.id }}
+                                </td>
+                                <td>
+                                    {{ course.name }}
+                                </td>
+                                <td>
+                                    {{ course.discription }}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+     </table>
+{% endblock %}
