@@ -11,22 +11,22 @@
     {% endwith %}
 
     {% macro render_field(field) %}
+      <dt>{{ field.label }}
+      <dd>{{ field(**kwargs)|safe }}</dd>
       {% if field.errors %}
-        <ul class=errors>
+        <ul class="errors">
         {% for error in field.errors %}
-          <li>{{ error }}</li>
+          <span class="text-danger">{{ error }}</span>
         {% endfor %}
         </ul>
       {% endif %}
-      <dt>{{ field.label }}
-      <dd>{{ field(**kwargs)|safe }}</dd>
     {% endmacro %}
 
-    <form action='login' method='POST'>
+    <form class="login-form" action='login' method='POST'>
         {{ form.csrf_token }}
         {{ render_field(form.phone) }}
         {{ render_field(form.passwd) }}
-        <input type='submit' value='登录'/>
+        <input class="btn-primary login-submit" type='submit' value='登录'/>
     </form>
 </div>
 {%endblock%}

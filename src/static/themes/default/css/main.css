@@ -40,3 +40,23 @@
 .side-menu-item {
     margin-top: 32px;
 }
+
+
+.login-form {
+    width: 340px;
+}
+
+.login-form input {
+    margin-bottom: 8px;
+    border: solid 2px darkgray;
+    width: 100%;
+}
+
+.login-form input.login-submit {
+    border:none;
+    width: 64px;
+}
+
+.login-form ul {
+    padding-left: 0px;
+}

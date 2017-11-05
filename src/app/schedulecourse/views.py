@@ -51,3 +51,4 @@ def schedule_list():
 def course_list():
     course_list = CourseModel.query.all()
     return render_template('course_list.html',course_list = course_list)
+
