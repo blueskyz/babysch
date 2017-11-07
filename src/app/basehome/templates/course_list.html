@@ -1,33 +1,9 @@
 {% extends 'base.html' %}
 
-{% block content %}
-    <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>名称</th>
-                            <th>描述</th>
-                            <th>图片链接</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for course  in course_list %}
-                            <tr>
-                                <td>
-                                    {{ course.id }}
-                                </td>
-                                <td>
-                                    {{ course.name }}
-                                </td>
-                                <td>
-                                    {{ course.discription }}
-                                </td>
-                                <td>
-                                    {{ course.img_url }}
-                                </td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-     </table>
+{% block main_content %}
+    <h3>课程体系</h3>
+    {% for course  in course_list %}
+        <h4 class="text-danger">{{ loop.index }}、{{ course.name }}</h4>
+        <p style="text-indent:2em">{{ course.discription }}</p>
+    {% endfor %}
 {% endblock %}

@@ -4,6 +4,7 @@
 
 from flask import render_template
 from . import home
+from models import CourseModel
 
 
 @home.route('/')
@@ -13,7 +14,8 @@ def index():
 
 @home.route('/curriculum/')
 def curriculum():
-    return render_template('home/curriculum.html')
+    course_list = CourseModel.query.all()
+    return render_template('home/curriculum.html',course_list=course_list)
 
 
 @home.route('/brand/')
