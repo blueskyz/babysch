@@ -11,7 +11,7 @@ from sqlalchemy import or_
 from exts import db
 
 
-@course.route('/schedule',methods = ['GET','POST'])
+@course.route('/schedule/',methods = ['GET','POST'])
 def schedule():
     print(flask.request.method)
     if flask.request.method == 'GET':

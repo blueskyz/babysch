@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="ch">
-<head>
-    <meta charset="UTF-8">
-    <title>预约课程</title>
-</head>
-<body>
-    {{ error }}
+{% extends 'base.html' %}
+
+{% block main_content %}
+   {{ error }}
 <form action="/schedule" method="post">
      <p>电话号码：</p>
      <input type="text" name="phone">
@@ -14,5 +10,4 @@
     <input type="submit" value="提交">
     {{ tag }}
 </form>
-</body>
-</html>
+{% endblock %}
