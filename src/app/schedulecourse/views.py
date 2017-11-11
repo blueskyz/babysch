@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
-from flask import render_template,redirect
+from flask import render_template, flash, request, redirect
 import flask
 from . import course
 from forms import ScheduleForm
@@ -11,30 +10,45 @@ from sqlalchemy import or_
 from exts import db
 
 
+'''
+form = AuthForm()
+
+    # 验证手机号密码
+    if form.validate_on_submit():
+        phone = request.form.get('phone')
+        passwd = request.form.get('passwd')
+        user_info = User.query.filter_by(telephone=phone).first()
+        if user_info and user_info.check_password(passwd):
+            login_user(user_info)
+            return redirect('/')
+        else:
+            flash('用户名密码不匹配')
+
+    return render_template('auth/login.html', form=form)
+'''
+
 @course.route('/schedule/',methods = ['GET','POST'])
 def schedule():
-    print(flask.request.method)
+    form = ScheduleForm()
     if flask.request.method == 'GET':
-        return render_template('schedule_course.html')
+        return render_template('schedule_course.html',form=form)
     else:
         form = ScheduleForm(flask.request.form)
-
-        if form.validate():
+        if form.validate_on_submit():
             phone = flask.request.form.get('phone')
             datetime = flask.request.form.get('date')
             record = ScheduleRecordModel.query.filter_by(phone=phone).first()
             result = ''
             if record:
-                result = '已经预约'
+                flash('已经预约')
             else:
                 record = ScheduleRecordModel(phone=phone,date=datetime)
-                db.session.add(record)
-                db.session.commit()
-                result = '%s成功预约%s' %(phone,datetime)
-            return render_template('schedule_course.html',tag = result)
+                # flash('预约成功')
+                return redirect("/")
+            # return render_template('schedule_course.html',form=form)
         else:
-            error = "预约失败请重新预约"
-            return render_template('schedule_course.html',error=error)
+            error = "数据格式错误"
+            return render_template('schedule_course.html',form=form)
 
 '''
 预约列表

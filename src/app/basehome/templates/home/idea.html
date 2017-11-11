@@ -1,13 +1,53 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% block body %}
+<body style="background-image: url(/static/themes/default/images/edition.jpg); background-size: 100%">
+       <nav class="navbar navbar-default">
+           <div class="container-fluid">
+               <!-- Brand and toggle get grouped for better mobile display -->
+               <div class="navbar-header">
+                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                       <span class="sr-only">Toggle navigation</span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                   </button>
+                   <a class="navbar-brand" href="/">嘟马奇</a>
+               </div>
 
-{% block main_content %}
-<h3>教育理念</h3>
-<p style="text-indent:2em">
-多维培养 全面成长
-</p>
-<p style="text-indent:2em">
-智能是人在特定情景中解决问题并有所创造的能力，根据心理发展学家霍华德·加德纳(Howard Gardner)的研究得出结论人在学习能力上的差异主要体现在九个方面，即语言智能、逻辑数理智 能、空间智能、运动智能、音乐智能、人际交往智能、内省智能、自然观察智能和存在智能。 嘟马奇提出的特色的<span style="color:red">儿童艺术思维教育的课程体系</span>和<span style="color:red">托教家的创新模式</span>就是对应综合培养这九 项智能， 我们会针对儿童的不同特征进行优化智能组合，精准把握儿童发展的整体面，培养完 整的人。在孩子的成长过程中文化的熏陶和环境的刺激都不可或缺，前期的潜能开发要通过多方 面认知，多角度观察、多感官刺激及多手段探索的模式体系来实现智能维衡的目标
-</p>
-
+               <!-- Collect the nav links, forms, and other content for toggling -->
+               <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="inactive"><a href="/">首页</a></li>
+                        <li class="inactive"><a href="/home/aboutus">企业简介</a></li>
+                        <li class="inactive"><a href="/home/education">教育特色</a></li>
+                        <li class="inactive"><a href="/home/idea">教育理念</a></li>
+                        <li class="inactive"><a href="/home/curriculum">课程体系</a></li>
+                        <li class="inactive"><a href="/home/activity">活动讯息</a></li>
+                        <li class="inactive"><a href="/schedule/">预约课程</a></li>
+                        {% if current_user.is_authenticated %}
+                        <li class="inactive"><a href="/schedule">预约信息管理</a></li>
+                        <li class="inactive"><a href="/auth/logout">退出</a></li>
+                        {% else %}
+                        <li class="inactive"><a href="/auth/login">登陆</a></li>
+                        {% endif %}
+                    </ul>
+               </div><!-- /.navbar-collapse -->
+           </div><!-- /.container-fluid -->
+       </nav>
+       <div id="side-menu">
+           <ul class="menu">
+               <li class="side-menu-item"><a href="/">首页</a></li>
+               <li class="side-menu-item"><a href="/home/brand">品牌故事</a></li>
+               <li class="side-menu-item"><a href="/home/curriculum">课程体系</a></li>
+               <li class="side-menu-item"><a href="/home/nursery">幼儿托教</a></li>
+               <li class="side-menu-item"><a href="/home/contact">联系我们</a></li>
+               {% if current_user.is_authenticated %}
+               <li class="side-menu-item"><a href="/schedule">预约信息管理</a></li>
+               <li class="side-menu-item"><a href="/auth/logout">退出</a></li>
+               {% else %}
+               <li class="side-menu-item"><a href="/auth/login">登陆</a></li>
+               {% endif %}
+           </ul>
+       </div>
+</body>
 {% endblock %}
-

@@ -1,13 +1,53 @@
-{% extends 'base.html' %}
+{#{% extends 'base.html' %}#}
+{#{% block content %}#}
+{#    <div>#}
+{#        <h1>预约课程</h1>#}
+{#        {% with messages = get_flashed_messages() %}#}
+{#        {% if messages %}#}
+{#        {% for msg in messages%}#}
+{#            <div>{{msg}}</div>#}
+{#        {% endfor%}#}
+{#        {% endif %}#}
+{#        {% endwith %}#}
+{#        <form action="/schedule/" method="post">#}
+{#            {{ form.csrf_token }}#}
+{#            {{ render_field(form.phone) }}#}
+{#            {{ render_field(form.date) }}#}
+{#            <input class="btn-primary login-submit" type='submit' value='登录'/>#}
+{#        </form>#}
+{#    </div>#}
+{#{% endblock %}#}
 
-{% block main_content %}
-   {{ error }}
-<form action="/schedule" method="post">
-     <p>电话号码：</p>
-     <input type="text" name="phone">
-     <p>所选日期：</p>
-    <input type="text" name="date">
-    <input type="submit" value="提交">
-    {{ tag }}
-</form>
-{% endblock %}
+
+{% extends 'base.html' %}
+{% block content %}
+<div style="margin: auto auto">
+    <h1>进行预约</h1>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for msg in messages%}
+    <div>{{msg}}</div>
+    {% endfor%}
+    {% endif %}
+    {% endwith %}
+
+    {% macro render_field(field) %}
+      <dt>{{ field.label }}
+      <dd>{{ field(**kwargs)|safe }}</dd>
+      {% if field.errors %}
+        <ul class="errors">
+        {% for error in field.errors %}
+          <span class="text-danger">{{ error }}</span>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endmacro %}
+
+    <form class="login-form" action='/schedule/' method='POST'>
+        {{ form.csrf_token }}
+        {{ render_field(form.phone) }}
+        {{ render_field(form.date) }}
+        <input style="margin: 20px 0px;float: right;" class="btn-primary login-submit" type='submit' value='提交'/>
+    </form>
+</div>
+{%endblock%}

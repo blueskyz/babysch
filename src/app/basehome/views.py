@@ -15,7 +15,7 @@ def index():
 @home.route('/curriculum/')
 def curriculum():
     course_list = CourseModel.query.all()
-    return render_template('home/special.html',course_list=course_list)
+    return render_template('home/curriculum.html',course_list=course_list)
 
 
 @home.route('/activity/')
@@ -30,9 +30,9 @@ def brand():
 
 @home.route('/idea/')
 def idea():
-    return render_template('home/edition.html')
+    return render_template('home/idea.html')
 
 
 @home.route('/education/')
 def education():
-    return render_template('home/special.html')
+    return render_template('home/education.html')
