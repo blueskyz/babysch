@@ -19,6 +19,18 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 3em;
 }
 
+
+.home_footer {
+    background-position: center top;
+    padding-top: 5px;
+    color: white;
+    text-align: center;
+    min-height: 4em;
+    margin-top: -25px;
+}
+
+.foo
+
 .footer a {
     color: white;
 }
@@ -28,7 +40,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-    min-height: 800px;
+    width: 100%;
+}
+
+
+.container-fluid {
+
 }
 
 .navbar {
@@ -76,6 +93,9 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 32px;
 }
 
+.navbar-right {
+    float: right;
+}
 
 .login-form {
     width: 340px;

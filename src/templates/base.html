@@ -18,6 +18,7 @@
         <title>{% block title %}主站{% endblock %} - 上海嘟马奇托教中心</title>
         {% endblock %}
     </head>
+    {% block body %}
     <body>
         {% block navbar %}
         <nav class="navbar navbar-default">
@@ -34,14 +35,14 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li class="inactive"><a href="/">首页</a></li>
-                        <li class="inactive"><a href="/home/brand">品牌故事</a></li>
-                        <li class="inactive"><a href="/home/idea">教育理念</a></li>
+                        <li class="inactive"><a href="/home/aboutus">企业简介</a></li>
                         <li class="inactive"><a href="/home/education">教育特色</a></li>
+                        <li class="inactive"><a href="/home/idea">教育理念</a></li>
                         <li class="inactive"><a href="/home/curriculum">课程体系</a></li>
-                        <li class="inactive"><a href="/home/contact">联系我们</a></li>
+                        <li class="inactive"><a href="/home/activity">活动讯息</a></li>
                         {% if current_user.is_authenticated %}
                         <li class="inactive"><a href="/schedule">预约信息管理</a></li>
                         <li class="inactive"><a href="/auth/logout">退出</a></li>
@@ -74,19 +75,19 @@
             <div class="intro-header">
                 <img style="width: 100%" src="/static/themes/default/images/mid_banner2.jpg"></img>
             </div>
-            <div class="page-content">
-            {% block main_content %}
-                <h1>托教介绍</h1>
-                <p>托教班将国内外先进的教育理念和授课方法相结合，着重培养幼儿在集体环境中良好的生活习惯和行为方式，课程设计尊重幼儿个性发展，锻炼幼儿成长为独立自信的人。</p>
-            {% endblock %}
+            <div class="">
+            {% block main_content %}{% endblock %}
             </div>
             {% endblock %}
         </div>
 
+        {% block footer%}
         <div class="footer">
             <span>版权所有 © 2017，嘟马奇教育公司 | <a src="#">备案</a></span>
         </div>
+        {% endblock %}
     </body>
+    {% endblock %}
     <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript">
 $(function(){

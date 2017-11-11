@@ -1,4 +1,52 @@
 {% extends 'base.html' %}
-{% block content %}
- <img style="width: 100%" src="/static/themes/default/images/intro.jpg"></img>
+{% block body %}
+<body style="background-image: url(/static/themes/default/images/intro.jpg); background-size: 100%">
+       <nav class="navbar navbar-default">
+           <div class="container-fluid">
+               <!-- Brand and toggle get grouped for better mobile display -->
+               <div class="navbar-header">
+                   <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                       <span class="sr-only">Toggle navigation</span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                       <span class="icon-bar"></span>
+                   </button>
+                   <a class="navbar-brand" href="/">嘟马奇</a>
+               </div>
+
+               <!-- Collect the nav links, forms, and other content for toggling -->
+               <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                   <ul class="nav navbar-nav">
+                       <li class="inactive"><a href="/">首页</a></li>
+                       <li class="inactive"><a href="/home/aboutus">企业简介</a></li>
+                       <li class="inactive"><a href="/home/education">教育特色</a></li>
+                       <li class="inactive"><a href="/home/idea">教育理念</a></li>
+                       <li class="inactive"><a href="/home/curriculum">课程体系</a></li>
+                       <li class="inactive"><a href="/home/activity">活动讯息</a></li>
+                       {% if current_user.is_authenticated %}
+                       <li class="inactive"><a href="/schedule">预约信息管理</a></li>
+                       <li class="inactive"><a href="/auth/logout">退出</a></li>
+                       {% else %}
+                       <li class="inactive"><a href="/auth/login">登陆</a></li>
+                       {% endif %}
+                   </ul>
+               </div><!-- /.navbar-collapse -->
+           </div><!-- /.container-fluid -->
+       </nav>
+       <div id="side-menu">
+           <ul class="menu">
+               <li class="side-menu-item"><a href="/">首页</a></li>
+               <li class="side-menu-item"><a href="/home/brand">品牌故事</a></li>
+               <li class="side-menu-item"><a href="/home/curriculum">课程体系</a></li>
+               <li class="side-menu-item"><a href="/home/nursery">幼儿托教</a></li>
+               <li class="side-menu-item"><a href="/home/contact">联系我们</a></li>
+               {% if current_user.is_authenticated %}
+               <li class="side-menu-item"><a href="/schedule">预约信息管理</a></li>
+               <li class="side-menu-item"><a href="/auth/logout">退出</a></li>
+               {% else %}
+               <li class="side-menu-item"><a href="/auth/login">登陆</a></li>
+               {% endif %}
+           </ul>
+       </div>
+</body>
 {% endblock %}
