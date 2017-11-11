@@ -20,7 +20,9 @@
     </head>
     {% block body %}
     <body>
+    {% endblock %}
         {% block navbar %}
+        <div class="navbar-top"></div>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,7 +33,9 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <!--
                     <a class="navbar-brand" href="/">嘟马奇</a>
+                    -->
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -57,10 +61,12 @@
         <div id="side-menu">
             <ul class="menu">
                 <li class="side-menu-item"><a href="/">首页</a></li>
-                <li class="side-menu-item"><a href="/home/brand">品牌故事</a></li>
+                <li class="side-menu-item"><a href="/home/aboutus">企业简介</a></li>
+                <li class="side-menu-item"><a href="/home/education">教育特色</a></li>
+                <li class="side-menu-item"><a href="/home/idea">教育理念</a></li>
                 <li class="side-menu-item"><a href="/home/curriculum">课程体系</a></li>
-                <li class="side-menu-item"><a href="/home/nursery">幼儿托教</a></li>
-                <li class="side-menu-item"><a href="/home/contact">联系我们</a></li>
+                <li class="side-menu-item"><a href="/home/activity">活动讯息</a></li>
+                <li class="side-menu-item"><a href="/schedule">预约课程</a></li>
                 {% if current_user.is_authenticated %}
                 <li class="side-menu-item"><a href="/schedule">预约信息管理</a></li>
                 <li class="side-menu-item"><a href="/auth/logout">退出</a></li>
@@ -88,7 +94,6 @@
         </div>
         {% endblock %}
     </body>
-    {% endblock %}
     <script type="text/javascript" src="/static/bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript">
 $(function(){

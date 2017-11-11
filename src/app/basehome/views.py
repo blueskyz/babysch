@@ -14,8 +14,9 @@ def index():
 
 @home.route('/curriculum/')
 def curriculum():
-    course_list = CourseModel.query.all()
-    return render_template('home/curriculum.html',course_list=course_list)
+    # course_list = CourseModel.query.all()
+    # return render_template('home/curriculum.html',course_list=course_list)
+    return render_template('home/curriculum.html')
 
 
 @home.route('/activity/')
