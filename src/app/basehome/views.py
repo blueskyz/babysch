@@ -18,16 +18,21 @@ def curriculum():
     return render_template('home/curriculum.html',course_list=course_list)
 
 
+@home.route('/activity/')
+def activity():
+    return render_template('home/activity.html')
+
+
 @home.route('/brand/')
 def brand():
-    return render_template('home/brand.html')
+    return render_template('home/intro.html')
 
 
 @home.route('/idea/')
 def idea():
-    return render_template('home/idea.html')
+    return render_template('home/edition.html')
 
 
 @home.route('/education/')
 def education():
-    return render_template('home/education.html')
+    return render_template('home/special.html')
