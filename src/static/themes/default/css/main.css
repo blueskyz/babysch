@@ -1,5 +1,7 @@
 body {
     font-size: 1.6em;
+    min-height: 2048px;
+    background-repeat: no-repeat;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -29,8 +31,6 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: -25px;
 }
 
-.foo
-
 .footer a {
     color: white;
 }
@@ -48,11 +48,20 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+.navbar-top {
+    background-color: #f1a824;
+    min-height: 10px;
+    border: 0px;
+}
+
 .navbar {
-    background-color: #e48632;
+    /* background-color: #f1a824; */
+    background-color: transparent;
     background-image: url(/static/themes/default/images/header.png);
     background-repeat: no-repeat;
-    background-size: 100%
+    background-size: 100%;
+    min-height: 152px;
+    border: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -68,7 +77,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: black;
+    color: white;
+    padding: 8px;
+    margin-top: 50px;
 }
 
 #side-menu {
@@ -116,3 +127,9 @@ h1, h2, h3, h4, h5, h6 {
 .login-form ul {
     padding-left: 0px;
 }
+
+@media (max-width: 425px)
+.navbar {
+    min-height: 30px;
+}
+
