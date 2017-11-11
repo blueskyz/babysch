@@ -52,6 +52,7 @@ h1, h2, h3, h4, h5, h6 {
     background-color: #e48632;
     background-image: url(/static/themes/default/images/header.png);
     background-repeat: no-repeat;
+    background-size: 100%
 }
 
 .navbar-default .navbar-brand {
