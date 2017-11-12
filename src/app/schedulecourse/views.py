@@ -40,7 +40,7 @@ def schedule():
             record = ScheduleRecordModel.query.filter_by(phone=phone).first()
             result = ''
             if record:
-                flash('已经预约')
+                return redirect("/")
             else:
                 record = ScheduleRecordModel(phone=phone,date=datetime)
                 # flash('预约成功')
