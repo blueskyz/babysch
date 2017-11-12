@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from flask import render_template, flash, request, redirect
+from flask import render_template, flash, redirect
 import flask
 from . import course
 from forms import ScheduleForm
-from models import ScheduleRecordModel,CourseModel
-from sqlalchemy import or_
-from exts import db
+from models import ScheduleRecordModel
+from flask_login import current_user
 
 
 '''
@@ -27,6 +26,7 @@ form = AuthForm()
     return render_template('auth/login.html', form=form)
 '''
 
+
 @course.route('/schedule/',methods = ['GET','POST'])
 def schedule():
     form = ScheduleForm()
@@ -42,7 +42,7 @@ def schedule():
             if record:
                 flash('已经预约')
             else:
-                record = ScheduleRecordModel(phone=phone,date=datetime)
+                ScheduleRecordModel(phone=phone,date=datetime)
                 # flash('预约成功')
                 return redirect("/")
             # return render_template('schedule_course.html',form=form)
@@ -50,16 +50,15 @@ def schedule():
             error = "数据格式错误"
             return render_template('schedule_course.html',form=form)
 
-'''
-预约列表
-'''
+
 @course.route('/schedule-list/',methods=['GET'])
 def schedule_list():
+    """
+    预约列表
+    """
+    if not current_user.is_admin():
+        return 'No Access', 403
     schedule_list = ScheduleRecordModel.query.all()
     return render_template('schedul_list.html',schedule_list = schedule_list)
-
-
-
-
 
 
