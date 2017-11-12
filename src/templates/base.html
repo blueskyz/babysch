@@ -47,7 +47,7 @@
                         <li class="inactive"><a href="/home/idea">教育理念</a></li>
                         <li class="inactive"><a href="/home/curriculum">课程体系</a></li>
                         <li class="inactive"><a href="/home/activity">活动讯息</a></li>
-                        <li class="inactive"><a href="/schedule/">预约课程</a></li>
+                        <li class="inactive"><a href="/schedule/">试听预约</a></li>
                         {% if current_user.is_authenticated %}
                         <li class="inactive"><a href="/schedule">预约信息管理</a></li>
                         <li class="inactive"><a href="/auth/logout">退出</a></li>
@@ -66,7 +66,7 @@
                 <li class="side-menu-item"><a href="/home/idea">教育理念</a></li>
                 <li class="side-menu-item"><a href="/home/curriculum">课程体系</a></li>
                 <li class="side-menu-item"><a href="/home/activity">活动讯息</a></li>
-                <li class="side-menu-item"><a href="/schedule">预约课程</a></li>
+                <li class="side-menu-item"><a href="/schedule">试听预约</a></li>
                 {% if current_user.is_authenticated %}
                 <li class="side-menu-item"><a href="/schedule">预约信息管理</a></li>
                 <li class="side-menu-item"><a href="/auth/logout">退出</a></li>
@@ -80,6 +80,7 @@
         <div class="container">
             {% block content %}
             <div class="intro-header">
+{#                <div class="topvebanner">#}
                 <img style="width: 100%" src="/static/themes/default/images/mid_banner2.jpg"></img>
             </div>
             <div class="">

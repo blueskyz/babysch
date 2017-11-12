@@ -35,10 +35,11 @@ class ScheduleRecordModel(db.Model):
     __tablename__ = 'scheduleRecord'
     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
     phone = db.Column(db.String(11),nullable=False)
+    childname = db.Column(db.String(32),nullable=False)
+    childage = db.Column(db.Integer,nullable=False)
     udate = db.Column(db.DateTime,default=datetime.datetime.now)
     cdate = db.Column(db.DateTime, default=datetime.datetime.now)
     note = db.Column(db.Text, nullable=True)
-    date = db.Column(db.String(32))
     # course_id = db.Column(db.String(64),db.ForeignKey('course.id'))
     # course = db.relationship('CourseModel')
 
