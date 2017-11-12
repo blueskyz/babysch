@@ -1,25 +1,7 @@
-{#{% extends 'base.html' %}#}
-{#{% block content %}#}
-{#    <div>#}
-{#        <h1>预约课程</h1>#}
-{#        {% with messages = get_flashed_messages() %}#}
-{#        {% if messages %}#}
-{#        {% for msg in messages%}#}
-{#            <div>{{msg}}</div>#}
-{#        {% endfor%}#}
-{#        {% endif %}#}
-{#        {% endwith %}#}
-{#        <form action="/schedule/" method="post">#}
-{#            {{ form.csrf_token }}#}
-{#            {{ render_field(form.phone) }}#}
-{#            {{ render_field(form.date) }}#}
-{#            <input class="btn-primary login-submit" type='submit' value='登录'/>#}
-{#        </form>#}
-{#    </div>#}
-{#{% endblock %}#}
-
 
 {% extends 'base.html' %}
+{% block body %}
+{% endblock %}
 {% block content %}
 <div style="margin: auto auto">
     <h1>进行预约</h1>
@@ -45,9 +27,15 @@
 
     <form class="login-form" action='/schedule/' method='POST'>
         {{ form.csrf_token }}
+        {{ render_field(form.childname) }}
         {{ render_field(form.phone) }}
-        {{ render_field(form.date) }}
+        {{ render_field(form.childage) }}
         <input style="margin: 20px 0px;float: right;" class="btn-primary login-submit" type='submit' value='提交'/>
     </form>
 </div>
 {%endblock%}
+ {% block footer %}
+    <div class="home_footer">
+        <img style="width: 98%" src="/static/themes/default/images/footer.png" />
+    </div>
+{% endblock %}

@@ -34,21 +34,27 @@ def schedule():
         return render_template('schedule_course.html',form=form)
     else:
         form = ScheduleForm(flask.request.form)
+
+        age = flask.request.form.get('childage')
+
+        print('age:',age)
         if form.validate_on_submit():
-            phone = flask.request.form.get('phone')
-            datetime = flask.request.form.get('date')
+            print('\n','分割线'.center(60,'-'),'\n','数据格式正确')
+            phone = form.phone.data
+            age = form.childage.data
+            name = form.childname.data
             record = ScheduleRecordModel.query.filter_by(phone=phone).first()
-            result = ''
             if record:
                 return redirect("/")
             else:
-                record = ScheduleRecordModel(phone=phone,date=datetime)
-                # flash('预约成功')
+                model = ScheduleRecordModel(phone=phone,childage=1,childname='xiaohong')
+                db.session.add(model)
+                db.session.commit()
                 return redirect("/")
-            # return render_template('schedule_course.html',form=form)
         else:
-            error = "数据格式错误"
+            print('\n', '分割线'.center(60, '-'), '\n', '数据格式错误')
             return render_template('schedule_course.html',form=form)
+
 
 '''
 预约列表
