@@ -6,23 +6,23 @@
 用户登录管理
 """
 
-import ujson
-import config
-from exts import cache
 from flask_login import LoginManager, UserMixin
 from models import UserModel
 
 login_manager = LoginManager()
 
-login_manager.login_view='auth.login'
+login_manager.login_view='app.auth.login'
 login_manager.login_message='请登录'
 
 USER_AUTH_KEY_PRE = 'auth:authened_user:{}'
 
+
 @login_manager.user_loader
 def load_user(user_id):
+    print('*' * 20)
     return User.query.get(int(user_id))
 
 
 class User(UserMixin, UserModel):
-    pass
+    def is_admin(self):
+        return self.id < 10

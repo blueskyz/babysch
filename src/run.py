@@ -9,9 +9,6 @@ from app.basehome import home
 from app.schedulecourse import course
 
 from flask import Flask, render_template
-from flask_script import Manager
-from flask_migrate import Migrate, MigrateCommand
-from flask_sqlalchemy import SQLAlchemy
 
 from exts import db, cache
 from login import login_manager

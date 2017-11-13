@@ -5,10 +5,11 @@
 from flask import render_template, flash, request, redirect
 from . import auth
 from forms import AuthForm, SignupForm
-from login import User, login_manager
+from login import User
 from flask_login import login_user, logout_user, login_required
 from models import UserModel
 from exts import db
+from flask_login import current_user
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -64,4 +65,6 @@ def signup():
 @auth.route('/logined', methods=['GET'])
 @login_required
 def test_authed():
-    return 'logined'
+    if current_user.is_admin():
+        return 'Has Access'
+    return 'No Access'
