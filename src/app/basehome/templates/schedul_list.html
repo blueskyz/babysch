@@ -1,22 +1,21 @@
 {% extends 'base.html' %}
 
 {% block main_content %}
-    <h3>课程体系</h3>
+    <h3>预约列表</h3>
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>电话号码</th>
-                <th>日期</th>
+                <th>父母电话号码</th>
+                <th>小朋友名字</th>
+                <th>小朋友年龄</th>
             </tr>
         </thead>
         <tbody>
             {% for record  in schedule_list %}
                 <tr>
-                    <td>
-                        {{ record.phone }}
-                    </td>
-
-                    <td>{{ record.date }}</td>
+                    <td>{{ record.phone }}</td>
+                    <td>{{ record.childname }}</td>
+                    <td>{{ record.childage }}</td>
                 </tr>
             {% endfor %}
         </tbody>
