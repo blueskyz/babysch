@@ -1,6 +1,6 @@
 body {
     font-size: 1.6em;
-    min-height: 2048px;
+    /*min-height: 2048px;*/
     background-repeat: no-repeat;
 }
 
@@ -23,12 +23,16 @@ h1, h2, h3, h4, h5, h6 {
 
 
 .home_footer {
+    width: 100%;
     background-position: center top;
     padding-top: 5px;
     color: white;
     text-align: center;
     min-height: 4em;
-    margin-top: -25px;
+    margin-top: -5px;
+    padding-right: 0px;
+    padding-right: 0px;
+
 }
 
 .footer a {
@@ -41,6 +45,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .container {
     width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: 0px;
 }
 
 
@@ -62,6 +69,7 @@ h1, h2, h3, h4, h5, h6 {
     background-size: 100%;
     min-height: 152px;
     border: 0px;
+    margin-bottom: 0px;
 }
 
 .navbar-default .navbar-brand {
@@ -79,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-default .navbar-nav>li>a {
     color: white;
     padding: 8px;
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 #side-menu {
