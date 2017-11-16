@@ -10,18 +10,21 @@ from app.schedulecourse import course
 
 from flask import Flask, render_template
 
-from exts import db, cache
-from login import login_manager
+from exts import db
+from login import login_manager, sess
+from cache import redis_ins
 
 # 应用初始化
 app = Flask(__name__)
 app.config.from_object(config)
 
+# redis session 初始化
+app.config['SESSION_TYPE'] = 'redis'
+app.config['SESSION_REDIS'] = redis_ins
+sess.init_app(app)
+
+# db 初始化
 db.init_app(app)
-
-
-# 缓存模块初始化
-cache.init_app(app)
 
 # 登录模块初始化
 login_manager.init_app(app)

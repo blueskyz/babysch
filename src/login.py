@@ -6,8 +6,13 @@
 用户登录管理
 """
 
+import redis
+import config
 from flask_login import LoginManager, UserMixin
+from flask_session import Session
 from models import UserModel
+
+sess = Session()
 
 login_manager = LoginManager()
 
