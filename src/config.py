@@ -26,4 +26,4 @@ SQLALCHEMY_TRACK_MODIFICATIONS = True
 
 DEBUG = False
 
-SECRET_KEY = os.urandom(24)
+SECRET_KEY = '2480fhdffgsda.fsjadfhgq3hadsfsdfb'
